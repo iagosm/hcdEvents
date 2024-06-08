@@ -1,7 +1,9 @@
 @extends('layouts.main')
-@section('title', 'Contatos')
+@section('title', 'Produto')
 @section('content')
-<h1>Está é a pagina de contato</h1>
+@if($id !== null)
+<h1>Exibindo produto de id:{{ $id }}</h1>
+@endif
 <a href="/">Home</a>
 <a href="/contact">Contatos</a>
 <a href="/products">Productions</a>
