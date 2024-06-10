@@ -15,17 +15,9 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
+Route::post('/events', [EventController::class, 'store']);
+
 
 Route::get('/contact', function () {
   return view('contact');
-});
-
-Route::get('/products', function () {
-
-  $search = request('search');
-  return view('products', ['search' => $search]);
-});
-
-Route::get('/products_teste/{id?}', function ($id = null) {
-  return view('product', ['id' => $id]);
 });

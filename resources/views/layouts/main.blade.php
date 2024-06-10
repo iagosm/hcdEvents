@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    {{-- Css Aplicação --}}
-    <link rel="stylesheet" href="/css/style.css">
     {{-- Fonte do Google --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     {{-- CSS Boostrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    {{-- Css Aplicação --}}
+    <link rel="stylesheet" href="/css/style.css">
     <script src="/js/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-light">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid" id="navbar">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,16 @@
         </div>
       </nav>
     </header>
-    @yield('content')
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          @if(session('msg'))
+          <p class="msg">{{session('msg')}}</p>
+          @endif
+          @yield('content')
+        </div>
+      </div>
+    </main>
     <footer>
       <p>HDC Events &copy; 2020</p>
     </footer>
